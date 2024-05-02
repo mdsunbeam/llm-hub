@@ -104,7 +104,7 @@ class Claude3:
         )
 
 class Gemini:
-    def __init__(self, model_name: str = "gemini-pro"):
+    def __init__(self, model_name: str = "gemini-1.5-pro-latest"):
         self.model_name = model_name
         self.system_message = "I am a helpful assistant."
         self.messages = []
@@ -117,6 +117,7 @@ class Gemini:
 
     def query_LLM(self):
         self.response = self.model.generate_content(self.messages)
+        # print(response)
         return self.response
 
     def generate_response(self) -> str:     
