@@ -1,5 +1,6 @@
 from openai import OpenAI
 import anthropic
+import google.generativeai as genai
 
 import base64
 import cv2
@@ -99,5 +100,44 @@ class Claude3:
                 "content": [
                     {"type": "text", "text": user_msg},
                 ]
+            }
+        )
+
+class Gemini:
+    def __init__(self, model_name: str = "gemini-pro"):
+        self.model_name = model_name
+        self.system_message = "I am a helpful assistant."
+        self.messages = []
+
+        # GOOGLE API Key
+        file = open("GOOGLE_API_KEY.txt", "r")
+        api_key = file.read()
+        genai.configure(api_key=api_key)
+        self.model = genai.GenerativeModel(model_name = self.model_name, system_instruction=self.system_message)
+
+    def query_LLM(self):
+        self.response = self.model.generate_content(self.messages)
+        return self.response
+
+    def generate_response(self) -> str:     
+        response = self.query_LLM()
+        print(response)
+
+        print(len(self.messages))
+        return response.text
+    
+    def add_user_message(self, user_msg):
+        self.messages.append(
+            {
+                "role": "user",
+                "parts": [user_msg]
+            }
+        )
+    
+    def add_assistant_message(self, assistant_msg):
+        self.messages.append(
+            {
+                "role": "model",
+                "parts": [assistant_msg]
             }
         )
