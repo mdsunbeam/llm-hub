@@ -7,7 +7,6 @@ import cv2
 import json
 import re
 
-# TODO: Add handling for text or image only and image with text
 class GPT4Turbo:
     def __init__(self, model_name="gpt-4-turbo", system_message=None):
         self.model_name = model_name
@@ -179,7 +178,6 @@ class Claude3:
         else:
             pass
     
-
 class Gemini:
     def __init__(self, model_name="gemini-1.5-pro-latest", system_message=None):
         self.model_name = model_name

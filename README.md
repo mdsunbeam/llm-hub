@@ -170,7 +170,7 @@ if __name__ == "__main__":
 - [ ] Make example of all GPT, Claude 3, and Gemini family of models
 - [ ] Add separate, detailed documentation
 - [ ] Add more context management functions
-- [ ] Llama 3
+- [ ] Llama 3 (set up probably with Groq API)
 - [ ] Pass arbitrary amount of messages in one go
 - [ ] Poll all frontier models for the same prompt
 - [ ] Reproduce results on popular LLM and multimodal datasets 
