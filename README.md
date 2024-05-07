@@ -125,7 +125,7 @@ Next, create three text files called `OPENAI_API_KEY.txt`, `ANTHROPIC_API_KEY.tx
 
 This is a simple example of how to send in images and text.
 
-```
+```python
 from llms import GPT4Turbo, Claude3, Gemini
 import cv2
 
@@ -147,8 +147,6 @@ if __name__ == "__main__":
     gemini_1_5_pro.add_user_message(frame=logo, user_msg=text)
     print("Gemini 1.5 Pro: ", gemini_1_5_pro.generate_response())
 ```
-
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
