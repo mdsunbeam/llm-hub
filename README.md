@@ -151,6 +151,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [x] Handling of image and text with all frontier models
+- [ ] Make example of all GPT, Claude 3, and Gemini family of models
 - [ ] Llama 3
 - [ ] Pass arbitrary amount of messages in one go
 - [ ] Poll all frontier models for the same prompt
@@ -171,9 +172,9 @@ If you have a suggestion that would make this better, please fork the repo and c
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch (`git checkout -b feature/new-feature`)
+3. Commit your Changes (`git commit -m 'Added New Feature'`)
+4. Push to the Branch (`git push origin feature/new-feature`)
 5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -219,10 +220,9 @@ Project Link: [https://github.com/mdsunbeam/llm-hub](https://github.com/mdsunbea
 [forks-url]: https://github.com/mdsunbeam/llm-hub/network/members
 [stars-shield]: https://img.shields.io/github/stars/mdsunbeam/llm-hub.svg?style=for-the-badge
 [stars-url]: https://github.com/mdsunbeam/llm-hub/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[issues-shield]: https://img.shields.io/github/issues/mdsunbeam/llm-hub.svg?style=for-the-badge
+[issues-url]: https://github.com/mdsunbeam/llm-hub/issues
+[license-shield]: https://img.shields.io/github/license/mdsunbeam/llm-hub.svg?style=for-the-badge
+[license-url]: https://github.com/mdsunbeam/llm-hub/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/mdsunbeam
-[product-screenshot]: images/screenshot.png
