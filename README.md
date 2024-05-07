@@ -125,17 +125,19 @@ Next, create three text files called `OPENAI_API_KEY.txt`, `ANTHROPIC_API_KEY.tx
 
 ### Installation
 
-1. Clone the repo
+1. Make Python virtual environment
+   ```sh
+   python3.10 -m venv llm-hub-env
+   source llm-hub-env/bin/activate
+   ```
+2. Clone the repo
    ```sh
    git clone https://github.com/mdsunbeam/llm-hub.git
+   cd llm-hub
    ```
-2. Install NPM packages
+3. Install Python packages
    ```sh
-   npm install
-   ```
-3. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   pip install -r requirements.txt 
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
