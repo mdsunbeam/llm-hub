@@ -79,9 +79,20 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a repository that allows you to use the popular LLMs through their APIs or locally. The first version will have GPT models from OpenAI, Claude 3 models from Anthropic, Gemini models from Google, and Llama 3 models from Meta AI.
+Welcome to the Unified LLM Interface, a streamlined repository designed to facilitate access to the world's leading large language models (LLMs). This project simplifies the integration of major LLMs, whether through their APIs or local deployments.
 
-The emphasis is on simplicity and ease of use for these frontier models. It should be intuitive on how to send inputs to the model and manage the dialogue history.
+### Supported Models
+
+In the initial release, we support:
+
+- **GPT models from OpenAI**: Harness the power of OpenAI's cutting-edge language models.
+- **Claude 3 models from Anthropic**: Experience the nuanced understanding of Anthropic's Claude 3.
+- **Gemini models from Google**: Leverage Google's advanced Gemini models for robust AI interactions.
+
+### Key Features
+
+- **Simplicity at its Core**: We believe that interacting with frontier AI models should be straightforward and fuss-free. Our interface is crafted to ensure ease of use.
+- **Intuitive Interaction**: Users can easily send inputs and manage dialogue histories, making AI conversations more seamless and effective.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
