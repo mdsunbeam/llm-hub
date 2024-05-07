@@ -217,6 +217,6 @@ Project Link: [https://github.com/mdsunbeam/llm-hub](https://github.com/mdsunbea
 [issues-shield]: https://img.shields.io/github/issues/mdsunbeam/llm-hub.svg?style=for-the-badge
 [issues-url]: https://github.com/mdsunbeam/llm-hub/issues
 [license-shield]: https://img.shields.io/github/license/mdsunbeam/llm-hub.svg?style=for-the-badge
-[license-url]: https://github.com/mdsunbeam/llm-hub/blob/master/LICENSE.txt
+[license-url]: https://github.com/mdsunbeam/llm-hub/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/mdsunbeam
