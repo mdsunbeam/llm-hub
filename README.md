@@ -43,7 +43,7 @@
     <br />
     <br />
     <a href="https://github.com/mdsunbeam/llm-hub">View Demo</a> -->
-    ·
+    <!-- · -->
     <a href="https://github.com/mdsunbeam/llm-hub/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
     <a href="https://github.com/mdsunbeam/llm-hub/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
