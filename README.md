@@ -157,6 +157,8 @@ if __name__ == "__main__":
 
 - [x] Handling of image and text with all frontier models
 - [ ] Make example of all GPT, Claude 3, and Gemini family of models
+- [ ] Add separate, detailed documentation
+- [ ] Add more context management functions
 - [ ] Llama 3
 - [ ] Pass arbitrary amount of messages in one go
 - [ ] Poll all frontier models for the same prompt
