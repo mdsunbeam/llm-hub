@@ -152,6 +152,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 - [x] Handling of image and text with all frontier models
 - [ ] Llama 3
+- [ ] Pass arbitrary amount of messages in one go
+- [ ] Poll all frontier models for the same prompt
 - [ ] Reproduce results on popular LLM and multimodal datasets 
 
 See the [open issues](https://github.com/mdsunbeam/llm-hub/issues) for a full list of proposed features (and known issues).
