@@ -129,7 +129,7 @@ class Claude3:
         # print(response)
 
         # print(len(self.messages))
-        return response
+        return response.content[0].text
     
     def add_user_message(self, frame=None, user_msg=None):
         if frame is not None and user_msg is not None:
