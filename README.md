@@ -79,11 +79,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
-Repository that allows you to use the popular LLMs through their APIs or locally. The first version will have GPT models from OpenAI, Claude 3 models from Anthropic, Gemini models from Google, and Llama 3 models from Meta AI.
+This is a repository that allows you to use the popular LLMs through their APIs or locally. The first version will have GPT models from OpenAI, Claude 3 models from Anthropic, Gemini models from Google, and Llama 3 models from Meta AI.
 
 The emphasis is on simplicity and ease of use for these frontier models. It should be intuitive on how to send inputs to the model and manage the dialogue history.
 
