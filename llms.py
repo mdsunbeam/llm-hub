@@ -38,9 +38,9 @@ class GPT4Turbo:
 
     def generate_response(self) -> str:     
         response = self.query_LLM()
-        print(response)
+        # print(response)
         response_text = response.choices[0].message.content
-        print(len(self.messages))
+        # print(len(self.messages))
         return response_text
 
     def add_user_message(self, frame=None, user_msg=None):
@@ -126,9 +126,9 @@ class Claude3:
 
     def generate_response(self) -> str:     
         response = self.query_LLM()
-        print(response)
+        # print(response)
 
-        print(len(self.messages))
+        # print(len(self.messages))
         return response
     
     def add_user_message(self, frame=None, user_msg=None):
@@ -207,9 +207,9 @@ class Gemini:
 
     def generate_response(self) -> str:     
         response = self.query_LLM()
-        print(response)
+        # print(response)
 
-        print(len(self.messages))
+        # print(len(self.messages))
         return response.text
     
     def add_user_message(self, frame, user_msg):
