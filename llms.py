@@ -264,20 +264,3 @@ class Gemini:
                 "parts": assistant_msg
             }
         )
-    
-    def add_user_message_vision(self, frame):
-        image_data = self.encode_image(frame)
-        self.messages.append(
-            {
-                "role": "user",
-                "parts": [
-                    {
-                        "mime_type": "image/jpeg",
-                        "data": image_data
-                    },
-                    {
-                        "text": "Describe this image."
-                    }
-                ]
-            }
-        )
