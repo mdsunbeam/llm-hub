@@ -123,7 +123,7 @@ Next, create three text files called `OPENAI_API_KEY.txt`, `ANTHROPIC_API_KEY.tx
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This is a simple example of how to send in images and text.
+This is a simple example of how to send in images and text, which is the contents of `main.py`.
 
 ```python
 from llms import GPT4Turbo, Claude3, Gemini
