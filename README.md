@@ -39,10 +39,10 @@
   <p align="center">
     Easily start your project with the frontier models of OpenAI, Anthropic, and Google.
     <br />
-    <a href="https://github.com/mdsunbeam/llm-hub"><strong>Explore the docs »</strong></a>
+    <!-- <a href="https://github.com/mdsunbeam/llm-hub"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/mdsunbeam/llm-hub">View Demo</a>
+    <a href="https://github.com/mdsunbeam/llm-hub">View Demo</a> -->
     ·
     <a href="https://github.com/mdsunbeam/llm-hub/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
