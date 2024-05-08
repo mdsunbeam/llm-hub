@@ -165,7 +165,6 @@ if __name__ == "__main__":
 ### Text-Only Example
 ```python
 from llms import GPT4Turbo, Claude3, Gemini, Llama3
-import cv2
 
 if __name__ == "__main__":
     system_message = "You are a helpful assistant."
