@@ -37,7 +37,7 @@
 <h3 align="center">Large Language Model Hub</h3>
 
   <p align="center">
-    Easily start your project with the frontier models of OpenAI, Anthropic, Google, and Meta.
+    Easily start your project with the frontier models of OpenAI, Anthropic, Google, and Meta AI.
     <br />
     <!-- <a href="https://github.com/mdsunbeam/llm-hub"><strong>Explore the docs »</strong></a>
     <br />
@@ -79,7 +79,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Welcome to LLM Hub, a streamlined repository designed to facilitate access to the world's leading large language models (LLMs). This project simplifies the integration of major LLMs, whether through their APIs or local deployments.
+Welcome to LLM Hub, a streamlined repository designed to facilitate access to the world's leading large language models (LLMs). This project simplifies the integration of major LLMs, primarily through their APIs.
 
 ### Supported Models
 
@@ -221,7 +221,7 @@ Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/new-feature`)
-3. Commit your Changes (`git commit -m 'Added New Feature'`)
+3. Commit your Changes (`git commit -m 'added new feature'`)
 4. Push to the Branch (`git push origin feature/new-feature`)
 5. Open a Pull Request
 
