@@ -1,6 +1,7 @@
 from openai import OpenAI
 import anthropic
 import google.generativeai as genai
+from groq import Groq
 
 import base64
 import cv2
@@ -262,3 +263,48 @@ class Gemini:
                 "parts": assistant_msg
             }
         )
+
+class Llama3:
+    def __init__(self, model_name="llama3-70b-8192", system_message=None):
+        self.model_name = model_name
+        self.messages = []
+        self.system_message = system_message
+        # GROQ API Key
+        file = open("GROQ_API_KEY.txt", "r")
+        api_key = file.read()
+        self.client = Groq(api_key=api_key)
+
+        if system_message is not None:
+            system_prompt = {"role": "system", "content": system_message}
+            self.messages.append(system_prompt)
+        
+    def query_LLM(self):
+        self.response = self.client.chat.completions.create(
+            model=self.model_name,
+            messages=self.messages,
+            temperature=1,
+            n=1,
+            max_tokens=500,
+        )
+        return self.response
+
+    def generate_response(self) -> str:     
+        response = self.query_LLM()
+        # print(response)
+        response_text = response.choices[0].message.content
+        # print(len(self.messages))
+        return response_text
+
+    def add_user_message(self, user_msg=None):
+        self.messages.append(
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": user_msg},
+                ],
+            }
+        )
+
+    def add_assistant_message(self):
+        if self.response is not None:
+            self.messages.append({"role": "assistant", "content": self.response})
