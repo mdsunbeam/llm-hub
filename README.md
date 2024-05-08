@@ -37,7 +37,7 @@
 <h3 align="center">Large Language Model Hub</h3>
 
   <p align="center">
-    Easily start your project with the frontier models of OpenAI, Anthropic, and Google.
+    Easily start your project with the frontier models of OpenAI, Anthropic, Google, and Meta.
     <br />
     <!-- <a href="https://github.com/mdsunbeam/llm-hub"><strong>Explore the docs »</strong></a>
     <br />
