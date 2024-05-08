@@ -88,6 +88,7 @@ In the initial release, we support:
 - **GPT models from OpenAI**: Harness the power of OpenAI's cutting-edge language models.
 - **Claude 3 models from Anthropic**: Experience the nuanced understanding of Anthropic's Claude 3.
 - **Gemini models from Google**: Leverage Google's advanced Gemini models for robust AI interactions.
+- **Llama 3 models from Meta AI**: Dive into the depth of knowledge encapsulated by Meta's Llama 3.
 
 ### Key Features
 
@@ -100,15 +101,16 @@ In the initial release, we support:
 <!-- GETTING STARTED -->
 ## Getting Started
 
-The first thing to set up is your OpenAI, Anthropic, and Google API keys. You need OpenAI for the GPT models, Anthropic for the Claude 3 models, and Google for the Gemini models.
+The first thing to set up is your OpenAI, Anthropic, Google, and Groq API keys. You need OpenAI for the GPT models, Anthropic for the Claude 3 models, Google for the Gemini models, and finally Groq for Llama 3 models.
 
 ### Prerequisites
 
 1. Get an API key for OpenAI at: [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)
 2. Get directions for how to generate an API key for Anthropic at: [https://docs.anthropic.com/claude/reference/getting-started-with-the-api](https://docs.anthropic.com/claude/reference/getting-started-with-the-api)
 3. Get an API key for Google at: [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
+4. Create a free account and get an API key for Groq at: [https://console.groq.com/keys](https://console.groq.com/keys)
 
-Next, create three text files called `OPENAI_API_KEY.txt`, `ANTHROPIC_API_KEY.txt`, `GOOGLE_API_KEY.txt`. Paste your respective API keys into the text files.
+Next, create three text files called `OPENAI_API_KEY.txt`, `ANTHROPIC_API_KEY.txt`, `GOOGLE_API_KEY.txt`, and `GROQ_API_KEY.txt`. Paste your respective API keys into the text files.
 
 ### Installation
 
@@ -134,8 +136,9 @@ Next, create three text files called `OPENAI_API_KEY.txt`, `ANTHROPIC_API_KEY.tx
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This is a simple example of how to send in images and text, which is the contents of `main.py`.
+This is a simple example of how to send in images and text. Note, **Llama 3** is currently not multimodal; you will need to use an embedding model if you want to pass along images.
 
+### Multimodal Example
 ```python
 from llms import GPT4Turbo, Claude3, Gemini
 import cv2
@@ -159,6 +162,33 @@ if __name__ == "__main__":
     print("Gemini 1.5 Pro: ", gemini_1_5_pro.generate_response())
 ```
 
+### Text-Only Example
+```python
+from llms import GPT4Turbo, Claude3, Gemini, Llama3
+import cv2
+
+if __name__ == "__main__":
+    system_message = "You are a helpful assistant."
+    text = "When was George Washington born?"
+
+    gpt4turbo = GPT4Turbo(system_message=system_message)
+    gpt4turbo.add_user_message(frame=None, user_msg=text)
+    print("GPT4Turbo: ", gpt4turbo.generate_response())
+
+    opus = Claude3(system_message=system_message)
+    opus.add_user_message(frame=None, user_msg=text)
+    print("Claude 3 Opus: ", opus.generate_response())
+
+    gemini_1_5_pro = Gemini(system_message=system_message)
+    gemini_1_5_pro.add_user_message(frame=None, user_msg=text)
+    print("Gemini 1.5 Pro: ", gemini_1_5_pro.generate_response())
+
+    llama3_70b = Llama3(system_message=system_message)
+    llama3_70b.add_user_message(frame=None, user_msg=text)
+    print("Llama 3 70B: ", llama3_70b.generate_response())
+```
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -168,9 +198,10 @@ if __name__ == "__main__":
 
 - [x] Handling of image and text with all frontier models
 - [ ] Make example of all GPT, Claude 3, and Gemini family of models
+- [ ] Add tool calling for all the classes
 - [ ] Add separate, detailed documentation
 - [ ] Add more context management functions
-- [ ] Llama 3 (set up probably with Groq API)
+- [x] Llama 3 (set up probably with Groq API)
 - [ ] Pass arbitrary amount of messages in one go
 - [ ] Poll all frontier models for the same prompt
 - [ ] Reproduce results on popular LLM and multimodal datasets 

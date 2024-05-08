@@ -278,6 +278,10 @@ class Llama3:
             system_prompt = {"role": "system", "content": system_message}
             self.messages.append(system_prompt)
         
+    def encode_image(self, cv_image):
+        _, buffer = cv2.imencode(".jpg", cv_image)
+        return base64.b64encode(buffer).decode("utf-8")
+        
     def query_LLM(self):
         self.response = self.client.chat.completions.create(
             model=self.model_name,
@@ -295,15 +299,22 @@ class Llama3:
         # print(len(self.messages))
         return response_text
 
-    def add_user_message(self, user_msg=None):
-        self.messages.append(
-            {
-                "role": "user",
-                "content": [
-                    {"type": "text", "text": user_msg},
-                ],
-            }
-        )
+    def add_user_message(self, frame=None, user_msg=None):
+        if user_msg is not None and frame is not None:
+            print("Sorry, cannot pass images to Llama 3.")
+        elif user_msg is not None and frame is None:
+            self.messages.append(
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": user_msg},
+                    ],
+                }
+            )
+        elif user_msg is None and frame is not None:
+            print("Sorry, cannot pass images to Llama 3.")
+        else:
+            pass
 
     def add_assistant_message(self):
         if self.response is not None:
