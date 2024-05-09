@@ -110,7 +110,7 @@ The first thing to set up is your OpenAI, Anthropic, Google, and Groq API keys. 
 3. Get an API key for Google at: [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
 4. Create a free account and get an API key for Groq at: [https://console.groq.com/keys](https://console.groq.com/keys)
 
-Next, create three text files called `OPENAI_API_KEY.txt`, `ANTHROPIC_API_KEY.txt`, `GOOGLE_API_KEY.txt`, and `GROQ_API_KEY.txt`. Paste your respective API keys into the text files.
+Next, create four text files called `OPENAI_API_KEY.txt`, `ANTHROPIC_API_KEY.txt`, `GOOGLE_API_KEY.txt`, and `GROQ_API_KEY.txt`. Paste your respective API keys into the text files.
 
 ### Installation
 
