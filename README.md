@@ -216,7 +216,8 @@ if __name__ == "__main__":
 - [ ] Add separate, detailed documentation
 - [ ] Add more context management functions
   - [x] Add function to print role messages
-  - [ ] Add function to delete specific role messages
+  - [x] Add function to delete specific role messages
+  - [ ] Add example of context management function
 - [x] Llama 3 (set up probably with Groq API)
 - [ ] Pass arbitrary amount of messages in one go
 - [ ] Poll all frontier models for the same prompt

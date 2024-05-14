@@ -12,8 +12,8 @@ TEMPERATURES = {"gpt-4-turbo": 1, "claude-3-opus-20240229": 1, "gemini-1.5-pro-l
 MAX_TOKENS = {"gpt-4-turbo": 500, "claude-3-opus-20240229": 500, "gemini-1.5-pro-latest": 500, "llama3-70b-8192": 500}
 CANDIDATES = {"gpt-4-turbo": 1, "claude-3-opus-20240229": 1, "gemini-1.5-pro-latest": 1, "llama3-70b-8192": 1}
 
-# TODO: add function that prints all system messages; add function that prints all user messages; add function that prints all assistant messages
-# add function that removes specific messages
+# TODO: add function that removes specific messages
+#            - input is role and index, removes message at that index and role
 
 class GPT4Turbo:
     def __init__(self, model_name="gpt-4-turbo", system_message=None):
@@ -113,6 +113,15 @@ class GPT4Turbo:
                     print(message["content"])
         else:
             print("Invalid role. Please enter 'system', 'user', or 'assistant'.")
+
+    def delete_message_by_role_and_index(self, role, index):
+        count = 0
+        for i, message in enumerate(self.messages):
+            if message['role'] == role:
+                if count == index:
+                    self.messages = self.messages[:i] + self.messages[i+1:]
+                    return  # Exit after deleting the message
+                count += 1
 
 class Claude3:
     def __init__(self, model_name="claude-3-opus-20240229", system_message=None):
@@ -217,6 +226,15 @@ class Claude3:
                     print(message["content"])
         else:
             print("Invalid role. Please enter 'system', 'user', or 'assistant'.")
+
+    def delete_message_by_role_and_index(self, role, index):
+        count = 0
+        for i, message in enumerate(self.messages):
+            if message['role'] == role:
+                if count == index:
+                    self.messages = self.messages[:i] + self.messages[i+1:]
+                    return  # Exit after deleting the message
+                count += 1
     
 class Gemini:
     def __init__(self, model_name="gemini-1.5-pro-latest", system_message=None):
@@ -319,6 +337,15 @@ class Gemini:
         else:
             print("Invalid role. Please enter 'system', 'user', or 'model'.")
 
+    def delete_message_by_role_and_index(self, role, index):
+        count = 0
+        for i, message in enumerate(self.messages):
+            if message['role'] == role:
+                if count == index:
+                    self.messages = self.messages[:i] + self.messages[i+1:]
+                    return  # Exit after deleting the message
+                count += 1
+
 class Llama3:
     def __init__(self, model_name="llama3-70b-8192", system_message=None):
         self.model_name = model_name
@@ -390,3 +417,12 @@ class Llama3:
                     print(message["content"])
         else:
             print("Invalid role. Please enter 'system', 'user', or 'assistant'.")
+
+    def delete_message_by_role_and_index(self, role, index):
+        count = 0
+        for i, message in enumerate(self.messages):
+            if message['role'] == role:
+                if count == index:
+                    self.messages = self.messages[:i] + self.messages[i+1:]
+                    return  # Exit after deleting the message
+                count += 1
