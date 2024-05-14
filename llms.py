@@ -11,6 +11,10 @@ import re
 TEMPERATURES = {"gpt-4-turbo": 1, "claude-3-opus-20240229": 1, "gemini-1.5-pro-latest": 1, "llama3-70b-8192": 1}
 MAX_TOKENS = {"gpt-4-turbo": 500, "claude-3-opus-20240229": 500, "gemini-1.5-pro-latest": 500, "llama3-70b-8192": 500}
 CANDIDATES = {"gpt-4-turbo": 1, "claude-3-opus-20240229": 1, "gemini-1.5-pro-latest": 1, "llama3-70b-8192": 1}
+
+# TODO: add function that prints all system messages; add function that prints all user messages; add function that prints all assistant messages
+# add function that removes specific messages
+
 class GPT4Turbo:
     def __init__(self, model_name="gpt-4-turbo", system_message=None):
         self.model_name = model_name
@@ -93,6 +97,22 @@ class GPT4Turbo:
     def add_assistant_message(self):
         if self.response is not None:
             self.messages.append({"role": "assistant", "content": self.response})
+
+    def print_message_history(self, role):
+        if role == "system":
+            for message in self.messages:
+                if message["role"] == "system":
+                    print(message["content"])
+        elif role == "user":
+            for message in self.messages:
+                if message["role"] == "user":
+                    print(message["content"])
+        elif role == "assistant":
+            for message in self.messages:
+                if message["role"] == "assistant":
+                    print(message["content"])
+        else:
+            print("Invalid role. Please enter 'system', 'user', or 'assistant'.")
 
 class Claude3:
     def __init__(self, model_name="claude-3-opus-20240229", system_message=None):
@@ -181,6 +201,22 @@ class Claude3:
             )
         else:
             pass
+
+    def print_message_history(self, role):
+        if role == "system":
+            for message in self.messages:
+                if message["role"] == "system":
+                    print(message["content"])
+        elif role == "user":
+            for message in self.messages:
+                if message["role"] == "user":
+                    print(message["content"])
+        elif role == "assistant":
+            for message in self.messages:
+                if message["role"] == "assistant":
+                    print(message["content"])
+        else:
+            print("Invalid role. Please enter 'system', 'user', or 'assistant'.")
     
 class Gemini:
     def __init__(self, model_name="gemini-1.5-pro-latest", system_message=None):
@@ -267,6 +303,22 @@ class Gemini:
             }
         )
 
+    def print_message_history(self, role):
+        if role == "system":
+            for message in self.messages:
+                if message["role"] == "system":
+                    print(message["content"])
+        elif role == "user":
+            for message in self.messages:
+                if message["role"] == "user":
+                    print(message["content"])
+        elif role == "model":
+            for message in self.messages:
+                if message["role"] == "model":
+                    print(message["content"])
+        else:
+            print("Invalid role. Please enter 'system', 'user', or 'model'.")
+
 class Llama3:
     def __init__(self, model_name="llama3-70b-8192", system_message=None):
         self.model_name = model_name
@@ -322,3 +374,19 @@ class Llama3:
     def add_assistant_message(self):
         if self.response is not None:
             self.messages.append({"role": "assistant", "content": self.response})
+
+    def print_message_history(self, role):
+        if role == "system":
+            for message in self.messages:
+                if message["role"] == "system":
+                    print(message["content"])
+        elif role == "user":
+            for message in self.messages:
+                if message["role"] == "user":
+                    print(message["content"])
+        elif role == "model":
+            for message in self.messages:
+                if message["role"] == "assistant":
+                    print(message["content"])
+        else:
+            print("Invalid role. Please enter 'system', 'user', or 'assistant'.")
