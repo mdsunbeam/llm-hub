@@ -145,19 +145,26 @@ import cv2
 
 if __name__ == "__main__":
 
+    MODELS = {
+    "OpenAI": ["gpt-4-turbo", "gpt-4o", "gpt-3.5-turbo"], 
+    "Anthropic": ["claude-3-opus-20240229", "claude-3-sonnet-20240229", "claude-3-haiku-20240307"], 
+    "Google": ["gemini-1.5-pro-latest", "gemini-pro", "gemini-pro-vision"], 
+    "Meta": ["llama3-70b-8192", "llama3-8b-8192"]
+    }
+
     logo = cv2.imread("images/llm-hub-logo.jpg")
     system_message = "You are a helpful assistant."
     text = "Describe what you see in this image."
 
-    gpt4turbo = GPT4Turbo(system_message=system_message)
+    gpt4turbo = GPT4Turbo(model_name=MODELS["OpenAI"][0], system_message=system_message)
     gpt4turbo.add_user_message(frame=logo, user_msg=text)
     print("GPT4Turbo: ", gpt4turbo.generate_response())
 
-    opus = Claude3(system_message=system_message)
+    opus = Claude3(model_name=MODELS["Anthropic"][0], system_message=system_message)
     opus.add_user_message(frame=logo, user_msg=text)
     print("Claude 3 Opus: ", opus.generate_response())
 
-    gemini_1_5_pro = Gemini(system_message=system_message)
+    gemini_1_5_pro = Gemini(model_name=MODELS["Google"][0], system_message=system_message)
     gemini_1_5_pro.add_user_message(frame=logo, user_msg=text)
     print("Gemini 1.5 Pro: ", gemini_1_5_pro.generate_response())
 ```
@@ -182,9 +189,9 @@ if __name__ == "__main__":
     gemini_1_5_pro.add_user_message(frame=None, user_msg=text)
     print("Gemini 1.5 Pro: ", gemini_1_5_pro.generate_response())
 
-    llama3_70b = Llama3(system_message=system_message)
+    llama3_70b = Llama3(model_name=MODELS["Meta"][0], system_message=system_message)
     llama3_70b.add_user_message(frame=None, user_msg=text)
-    print("Llama 3 70B: ", llama3_70b.generate_response())
+    print("Llama3 70B: ", llama3_70b.generate_response())
 ```
 
 
@@ -196,7 +203,7 @@ if __name__ == "__main__":
 ## Roadmap
 
 - [x] Handling of image and text with all frontier models
-- [ ] Make example of all GPT, Claude 3, and Gemini family of models
+- [x] Make example of all GPT, Claude 3, and Gemini family of models
 - [ ] Add tool calling for all the classes
 - [ ] Add separate, detailed documentation
 - [ ] Add more context management functions

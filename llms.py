@@ -8,7 +8,6 @@ import cv2
 import json
 import re
 
-MODELS = {"OpenAI": "gpt-4-turbo", "Anthropic": "claude-3-opus-20240229", "Google": "gemini-1.5-pro-latest", "Meta": "llama3-70b-8192"}
 TEMPERATURES = {"gpt-4-turbo": 1, "claude-3-opus-20240229": 1, "gemini-1.5-pro-latest": 1, "llama3-70b-8192": 1}
 MAX_TOKENS = {"gpt-4-turbo": 500, "claude-3-opus-20240229": 500, "gemini-1.5-pro-latest": 500, "llama3-70b-8192": 500}
 CANDIDATES = {"gpt-4-turbo": 1, "claude-3-opus-20240229": 1, "gemini-1.5-pro-latest": 1, "llama3-70b-8192": 1}
@@ -116,7 +115,6 @@ class Claude3:
                 model=self.model_name,
                 max_tokens=MAX_TOKENS[self.model_name],
                 temperature=TEMPERATURES[self.model_name],
-                n=CANDIDATES[self.model_name],
                 system=self.system_message,
                 messages=self.messages,
             )
@@ -125,7 +123,6 @@ class Claude3:
                 model=self.model_name,
                 max_tokens=MAX_TOKENS[self.model_name],
                 temperature=TEMPERATURES[self.model_name],
-                n=CANDIDATES[self.model_name],
                 messages=self.messages,
             )
         return self.response
