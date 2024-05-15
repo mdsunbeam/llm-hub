@@ -36,9 +36,9 @@ class GPT:
         self.response = self.client.chat.completions.create(
             model=self.model_name,
             messages=self.messages,
-            temperature=TEMPERATURES[self.model_name],
-            n=CANDIDATES[self.model_name],
-            max_tokens=MAX_TOKENS[self.model_name],
+            temperature=TEMPERATURES["OpenAI"],
+            n=CANDIDATES["OpenAI"],
+            max_tokens=MAX_TOKENS["OpenAI"],
         )
         return self.response
 
@@ -141,16 +141,16 @@ class Claude3:
         if self.system_message is not None:
             self.response = self.client.messages.create(
                 model=self.model_name,
-                max_tokens=MAX_TOKENS[self.model_name],
-                temperature=TEMPERATURES[self.model_name],
+                max_tokens=MAX_TOKENS["Anthropic"],
+                temperature=TEMPERATURES["Anthropic"],
                 system=self.system_message,
                 messages=self.messages,
             )
         else:
             self.response = self.client.messages.create(
                 model=self.model_name,
-                max_tokens=MAX_TOKENS[self.model_name],
-                temperature=TEMPERATURES[self.model_name],
+                max_tokens=MAX_TOKENS["Anthropic"],
+                temperature=TEMPERATURES["Anthropic"],
                 messages=self.messages,
             )
         return self.response
@@ -245,7 +245,7 @@ class Gemini:
         file = open("GOOGLE_API_KEY.txt", "r")
         api_key = file.read()
         genai.configure(api_key=api_key)
-        generation_config = genai.GenerationConfig(temperature = TEMPERATURES[self.model_name], max_output_tokens = MAX_TOKENS[self.model_name], candidate_count=CANDIDATES[self.model_name], top_p = 0, top_k = 1)
+        generation_config = genai.GenerationConfig(temperature = TEMPERATURES["Google"], max_output_tokens = MAX_TOKENS["Google"], candidate_count=CANDIDATES["Google"], top_p = 0, top_k = 1)
         if self.system_message is not None:
             self.model = genai.GenerativeModel(model_name = self.model_name, system_instruction=self.system_message, generation_config=generation_config)
         else:
@@ -367,9 +367,9 @@ class Llama3:
         self.response = self.client.chat.completions.create(
             model=self.model_name,
             messages=self.messages,
-            temperature=TEMPERATURES[self.model_name],
-            n=CANDIDATES[self.model_name],
-            max_tokens=MAX_TOKENS[self.model_name],
+            temperature=TEMPERATURES["Meta"],
+            n=CANDIDATES["Meta"],
+            max_tokens=MAX_TOKENS["Meta"],
         )
         return self.response
 
