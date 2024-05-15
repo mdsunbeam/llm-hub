@@ -140,7 +140,7 @@ This is a simple example of how to send in images and text. Note, **Llama 3** is
 
 ### Multimodal Example
 ```python
-from llms import GPT4Turbo, Claude3, Gemini
+from llms import GPT, Claude3, Gemini
 import cv2
 
 if __name__ == "__main__":
@@ -156,7 +156,7 @@ if __name__ == "__main__":
     system_message = "You are a helpful assistant."
     text = "Describe what you see in this image."
 
-    gpt4turbo = GPT4Turbo(model_name=MODELS["OpenAI"][0], system_message=system_message)
+    gpt4turbo = GPT(model_name=MODELS["OpenAI"][0], system_message=system_message)
     gpt4turbo.add_user_message(frame=logo, user_msg=text)
     print("GPT4Turbo: ", gpt4turbo.generate_response())
 
@@ -171,7 +171,7 @@ if __name__ == "__main__":
 
 ### Text-Only Example
 ```python
-from llms import GPT4Turbo, Claude3, Gemini, Llama3
+from llms import GPT, Claude3, Gemini, Llama3
 
 if __name__ == "__main__":
 
@@ -185,7 +185,7 @@ if __name__ == "__main__":
     system_message = "You are a helpful assistant."
     text = "When was George Washington born?"
 
-    gpt4turbo = GPT4Turbo(system_message=system_message)
+    gpt4turbo = GPT(system_message=system_message)
     gpt4turbo.add_user_message(frame=None, user_msg=text)
     print("GPT4Turbo: ", gpt4turbo.generate_response())
 

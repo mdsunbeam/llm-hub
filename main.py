@@ -1,4 +1,4 @@
-from llms import GPT4Turbo, Claude3, Gemini, Llama3
+from llms import GPT, Claude3, Gemini, Llama3
 import cv2
 
 if __name__ == "__main__":
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     llama3_70b.add_user_message(frame=None, user_msg=text2)
     print("Llama3 70B: ", llama3_70b.generate_response())
 
-    gpt4turbo = GPT4Turbo(model_name=MODELS["OpenAI"][0], system_message=system_message)
+    gpt4turbo = GPT(model_name=MODELS["OpenAI"][0], system_message=system_message)
     gpt4turbo.add_user_message(frame=logo, user_msg=text)
     print("GPT4Turbo: ", gpt4turbo.generate_response())
 

@@ -8,14 +8,13 @@ import cv2
 import json
 import re
 
-TEMPERATURES = {"gpt-4-turbo": 1, "claude-3-opus-20240229": 1, "gemini-1.5-pro-latest": 1, "llama3-70b-8192": 1}
-MAX_TOKENS = {"gpt-4-turbo": 500, "claude-3-opus-20240229": 500, "gemini-1.5-pro-latest": 500, "llama3-70b-8192": 500}
-CANDIDATES = {"gpt-4-turbo": 1, "claude-3-opus-20240229": 1, "gemini-1.5-pro-latest": 1, "llama3-70b-8192": 1}
+TEMPERATURES = {"OpenAI": 1, "Anthropic": 1, "Google": 1, "Meta": 1}
+MAX_TOKENS = {"OpenAI": 500, "Anthropic": 500, "Google": 500, "Meta": 500}
+CANDIDATES = {"OpenAI": 1, "Anthropic": 1, "Google": 1, "Meta": 1}
 
-# TODO: add function that removes specific messages
-#            - input is role and index, removes message at that index and role
 
-class GPT4Turbo:
+
+class GPT:
     def __init__(self, model_name="gpt-4-turbo", system_message=None):
         self.model_name = model_name
         self.messages = []
